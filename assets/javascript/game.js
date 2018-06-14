@@ -1,29 +1,37 @@
+// GLOBAL VARIABLES
+// ==========================================================================================================================================================================
+var targetNumber;
+
+var wins = 0;
+var losses = 0;
+var score = 0; //change to counter later
+
+var audio = new Audio("./assets/coin.mp3");
+
+
+
+
+// FUNCTIONS AND CONDITIONAL STATEMENTS
+// ==========================================================================================================================================================================
 $("document").ready(function () {
 
-    // ==============================================================
-    // MAJOR TASK: BUTTON CLICK FOR RULES
+
+
+    // BUTTON CLICK FOR RULES
     // ==============================================================
 
-// Rules are hidden on start up
-$("#p-background").show();
+    // Rules are hidden on start up
+    $("#rules").hide();
 
     $("#hide").click(function () {
-        $("#p-background").hide();
+        $("#rules").hide();
     });
     $("#show").click(function () {
-        $("#p-background").show();
+        $("#rules").show();
     });
 
-
-
-    // ==============================================================
     // MAJOR TASK: Set variables 
     // ==============================================================
-
-    var wins = 0;
-    var losses = 0;
-    var previous = 0; //change to counter later
-    var targetNumber;
 
     // put images of crystals into an array
     var images = [
@@ -33,10 +41,8 @@ $("#p-background").show();
         "assets/images/gem4.png"
     ]
 
-
-    // // ==============================================================
-    // // MAJOR TASK: START AND RESET CONDITIONS
-    // // ==============================================================
+    // MAJOR TASK: START AND RESET CONDITIONS
+    // ==============================================================
     var startGame = function () {
 
         targetNumber = Math.floor(Math.random() * (120 - 19) + 19);
@@ -69,62 +75,54 @@ $("#p-background").show();
     }
 
 
-
-    // user clicks crystal and numbers add together CLICKING THE CRYSTALS
+    // User Clicks Crystal and Random Number Writes to Score 
+    // ==============================================================
     $(document).on('click', ".crystal", function () {
 
-
+        audio.currentTime = 0;
+        audio.play();
         var userNum = parseInt($(this).attr('data-randomNumber'));
 
-        previous += userNum
+        score += userNum
 
-        $("#score-num").html(previous);
+        $("#score-num").html(score);
 
-
-
-        // // ==============================================================
-        // // MAJOR TASK: LOGIC CONDITIONS
-        // // ==============================================================
-
-        // // LOSING SCENARIO
-        // // ================
-        if (previous > targetNumber) {
+        // LOSING SCENARIO
+        // =========================================
+        if (score > targetNumber) {
             console.log("You lost!");
-            alert("You lose! Your final total score was: " + previous);
+            alert("You lose! Your final total score was: " + score);
+
             // increase losses by 1
             losses++;
             // update HTML element
-            $("#losses").html("Losses: " + losses);
+            $("#losses").html(losses);
             // reset score
-            previous = 0;
+            score = 0;
             // reset game
             startGame();
 
-            // //WINING SCENARIO
-            // //=================
-        } else if (previous === targetNumber) {
+            // WINING SCENARIO
+            // =====================================
+        } else if (score === targetNumber) {
             console.log("You win!!");
             alert("You win!");
+
             //increase wins by 1
             wins++;
             // update HTML element
-            $("#wins").html("Wins " + wins);
+            $("#wins").html(wins);
             // reset score  
-            previous = 0;
+            score = 0;
             // reset game
             startGame();
         }
-
-
     });
 
 
 
-    // // =========================================================
-    // // CALL GAME TO START WHEN PAGE LOADS
-    // // =========================================================
-
+    // CALL GAME TO START WHEN PAGE LOADS
+    // ==============================================================
     startGame();
-
 
 });

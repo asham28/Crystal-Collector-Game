@@ -2,31 +2,18 @@ body {
     background: url("../images/background.jpg");
     background-size: cover; 
     background-attachment: fixed; 
-
-    
-
-
+    background-position: center; 
+    background-repeat: no-repeat; 
     margin: 5px;
     font-family: 'Aref Ruqaa', serif;
     color: white; 
- 
-}
-
-#title-background {
-    padding: 20px;
-    margin-bottom: 10px;
 }
 
 h1 {
     font-size: 60px;
     color: white;
     text-align: center; 
-}
-
-#p-background {
-    padding-bottom: 100px;
-    margin-bottom: 10px;
-    display: flex; 
+    padding: 20px; 
 }
 
 
@@ -34,65 +21,38 @@ p {
     text-align: center; 
     font-size: 25px; 
     font-weight: bold; 
-    font-family: 'Sahitya', serif;
-    
+    font-family: 'Sahitya', serif; 
+    padding: 20px; 
+    margin: 0 20px; 
 }
 
+
+/*various numerics*/
 #targetNum, 
 #score-num, 
 #wins, 
 #losses {
-
     margin: 0 10px 10px 0;
     font-size: 30px;
     text-align: center;  
-    flex-direction: column; 
-    
+    flex-direction: column;    
 }
 
-
-container {
-    display: flex;
-    clear: left;
-    margin-top: 10px; 
+/*Rules and Buttons*/
+#rules {
+    padding-bottom: 100px;
+    margin-bottom: 10px;
+    text-align: center; 
 }
-
-
-
-.crystals {
-display: flex; 
-justify-content: center;
-margin-bottom: 40px;  
-
-}
-
-
-.crystal {
-    width: 110px;
-    height: 110px;
-    border: 1px solid green; 
-    border-radius: 4px; 
-    margin-right:10px ; 
-
-
-    border: 4px double black; 
-    border-radius: 1px 10px; 
-    background-color: white; 
-}
-
-
 
 button {
     border: 4px double black; 
     border-radius: 1px 10px; 
-    background-color: lightblue; 
+    background-color: #2BA7CF; 
     font-size: 15px; 
     color: white; 
     padding: 6px 12px; 
-    font-weight: bold; 
-    
-
-    
+    font-weight: bold;  
 }
 
 .btn {
@@ -101,6 +61,32 @@ button {
     margin-bottom: 40px; 
 }
 
+/*Crystal Images*/
+container {
+    display: flex;
+    clear: left;
+    margin-top: 10px; 
+}
+
+.crystals {
+display: flex; 
+justify-content: center;
+margin-bottom: 40px;  
+padding: 20px; 
+}
+
+.crystal {
+    width: 110px;
+    height: 110px;
+    border: 1px solid green; 
+    border-radius: 4px; 
+    margin-right:10px ; 
+    border: 4px double black; 
+    border-radius: 1px 10px; 
+    background-color: white; 
+}
+
+/* Display for User Score */
 .target {
     margin-bottom: 60px; 
 }
@@ -110,7 +96,6 @@ button {
     justify-content: center; 
     flex-direction: column; 
     margin-bottom: 40px; 
-
 }
 
 .totalScore p {
