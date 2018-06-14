@@ -4,7 +4,7 @@ var targetNumber;
 
 var wins = 0;
 var losses = 0;
-var score = 0; //change to counter later
+var score = 0; 
 
 var audio = new Audio("./assets/coin.mp3");
 
