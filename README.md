@@ -9,4 +9,4 @@ Technologies Used
 - jQuery
 
 Preview
-Play here: https://asham28.github.io/unit-4-game/
+Play here: https://asham28.github.io/Crystal-Collector-Game/
